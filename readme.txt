@@ -17,9 +17,9 @@ CIS支持使用云存储作为图片的存储空间，目前支持BOS百度云�
 (2)编辑文章并从外部网站(云平台以外的网站)引用图片(复制html代码中的img)，最后点击发布或更新时，图片会被自动上传至云平台，引用的图片的外部链接(src地址)会被替换为对应的云平台上的地址；
 (3)在媒体库删除图片时会将云平台上的图片删除。
 
-详细介绍：待增加
+详细介绍：暂无
 
-使用文档：待增加
+使用文档：暂无
 
 
 
@@ -32,9 +32,18 @@ CIS支持使用云存储作为图片的存储空间，目前支持BOS百度云�
 
 == Screenshots ==
 
-1.
+暂无
 
 == Changelog ==
 
-= 1.0.4 =
+= 1.0.6=
+* code refactor and filename conflict bug
+
+= 1.0.5=
+* get url from cdn or bucket source site
+
+= 1.0.4=
+* fix del attachements bug
+
+= 1.0.3 =
 * 初始版本
