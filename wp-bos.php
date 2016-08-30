@@ -187,7 +187,8 @@ function update_attachment_metadata($data, $post_id) {
 function get_attachment_url($url, $post_id) {
     $bos_options   = get_option('bos_options', true);
     $arr           = parse_url($url);
-    $file_name     = basename($url);
+    // $file_name     = basename($url); 获取中文文件名
+    $file_name     = preg_replace('/^.+[\\\\\\/]/', '', $url);
     $file_path     = $_SERVER['DOCUMENT_ROOT'] . $arr['path'];
 
     if (!file_exists($file_path)) {
@@ -212,7 +213,8 @@ function calculate_image_srcset($sources) {
     $bos_options   = get_option('bos_options', true);
 
     foreach ($sources as $key => &$value) {
-        $file_name = basename($value['url']);
+        // $file_name = basename($value['url']); 获取中文文件名
+	$file_name = preg_replace('/^.+[\\\\\\/]/', '', $value['url']);
         $arr       = parse_url($value['url']);
         $file_path = $_SERVER['DOCUMENT_ROOT'] . $arr['path'];
 
